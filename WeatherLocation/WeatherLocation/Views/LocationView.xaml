@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WeatherLocation.Views.LocationView" BackgroundColor="White" Title="{Binding Title}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Command="{Binding AddCommand}" Text="Current"/>
+    </ContentPage.ToolbarItems>
+    <Grid>
+        <ListView ItemsSource="{Binding FavouriteList}" ItemTapped="ListView_ItemTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding CountryName}" TextColor="Black" Detail="{Binding FullAddress}" DetailColor="Gray"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Label Text="No Favourite Location" IsVisible="{Binding IsNoData}" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" TextColor="Black"/>
+    </Grid>
+</ContentPage>

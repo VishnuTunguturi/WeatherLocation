@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cc="clr-namespace:WeatherLocation.CustomControls;assembly=WeatherLocation"
+             x:Class="WeatherLocation.Views.LocationDetailView" Title="{Binding Title}">
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Command="{Binding AddFavoriteCommand}" Text="Favourite"/>
+    </ContentPage.ToolbarItems>-->
+    <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid x:Name="mapgrd">
+            
+        </Grid>
+        <ScrollView Grid.Row="1" HorizontalOptions="StartAndExpand">
+            <StackLayout Spacing="20" Padding="12">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackLayout Grid.Column="0" Spacing="5">
+                        <Label Text="{Binding CurrentAddress.Locality}" Style="{StaticResource ValueLblStyle}"/>
+                        <Label Text="City" Style="{StaticResource SmallValueHeaderLblStyle}"/>
+                    </StackLayout>
+                    <StackLayout Grid.Column="1" Spacing="5">
+                        <Label Text="{Binding CurrentAddress.AdminArea}" Style="{StaticResource ValueLblStyle}"/>
+                        <Label Text="State" Style="{StaticResource SmallValueHeaderLblStyle}"/>
+                    </StackLayout>
+                </Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>                  
+                    <StackLayout Grid.Column="0" Spacing="5">
+                        <Label Text="{Binding CurrentAddress.CountryName}" Style="{StaticResource ValueLblStyle}"/>
+                        <Label Text="Country" Style="{StaticResource SmallValueHeaderLblStyle}"/>
+                    </StackLayout>
+                    <StackLayout Grid.Column="1" Spacing="5">
+                        <Label Text="{Binding CurrentTemp.temp}" Style="{StaticResource ValueLblStyle}"/>
+                        <Label Text="Temperature" Style="{StaticResource SmallValueHeaderLblStyle}"/>
+                    </StackLayout>
+                </Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackLayout Grid.Column="0" Spacing="5">
+                        <Label Text="{Binding CurrentTemp.temp_min}" Style="{StaticResource ValueLblStyle}"/>
+                        <Label Text="Min Temperature" Style="{StaticResource SmallValueHeaderLblStyle}"/>
+                    </StackLayout>
+                    <StackLayout Grid.Column="1" Spacing="5">
+                        <Label Text="{Binding CurrentTemp.temp_max}" Style="{StaticResource ValueLblStyle}"/>
+                        <Label Text="Max Temperature" Style="{StaticResource SmallValueHeaderLblStyle}"/>
+                    </StackLayout>
+                </Grid>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackLayout Grid.Column="0" Spacing="5">
+                        <Label Text="{Binding CurrentTemp.humidity,StringFormat='{}{0:N}%'}" Style="{StaticResource ValueLblStyle}"/>
+                        <Label Text="Humidity" Style="{StaticResource SmallValueHeaderLblStyle}"/>
+                    </StackLayout>
+                    <StackLayout Grid.Column="1" Spacing="5">
+                        <Label Text="{Binding CurrentTemp.pressure}" Style="{StaticResource ValueLblStyle}"/>
+                        <Label Text="Pressure" Style="{StaticResource SmallValueHeaderLblStyle}"/>
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>
